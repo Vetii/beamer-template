@@ -1,0 +1,102 @@
+\documentclass[mathserif]{beamer}
+\usepackage{fontspec}
+\usepackage{minted} % Source code listings
+\usepackage{graphicx} % Adding figures
+\usepackage{tabularx} % pretty tables
+
+% Minted styles
+\usemintedstyle{monokai}
+
+% Beamer config
+\setbeamerfont{title}{family=\fontspec{Roboto Slab Light}}
+\setbeamerfont{frametitle}{family=\fontspec{Roboto Slab Light}}
+\setbeamerfont{block title}{family=\fontspec{Roboto Slab}}
+\setbeamerfont{block title alerted}{family=\fontspec{Roboto Slab}}
+\setbeamerfont{block title example}{family=\fontspec{Roboto Slab}}
+
+\setsansfont{Lucida Grande}
+\usetheme{Rochester}
+
+% Document
+\begin{document}
+\title[Template]{Beamer template}
+\author{John SMITH}
+
+\institute{Uppsala University, Sweden}
+\date{\today}
+\subject{Computer Science}
+
+\frame[plain]{\titlepage}
+
+\AtBeginSection[]{
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection, currentsubsection]
+    \end{frame}
+}
+
+\AtBeginSubsection[]{
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection, currentsubsection]
+    \end{frame}
+}
+\section{Section}
+\subsection{Subsection}
+
+\begin{frame}{Title of the frame}
+    Some content about something, possibly with references \cite{REFERENCE}
+    \begin{enumerate}
+        \item First step of your process \footnotemark[1].
+        \item Second step of your process.
+    \end{enumerate}
+
+    \begin{block}{What is a block}
+        This is a block 
+    \end{block}
+
+    \begin{align*}
+        \sum_{i=0}^{i=k}k+1 - \tau
+    \end{align*}
+
+    \footnotetext[1]{This is a footnote.}
+\end{frame}
+
+\begin{frame}{Table}
+\begin{table}[ht]
+\caption{A table with statistics}
+\centering
+\fontsize{10pt}{15pt}\selectfont
+   \begin{tabularx}{\textwidth}{X|X|X}
+      \textbf{Column1} & \textbf{Column2} & \textbf{Column3} \\
+      \hline\hline
+      Something 1 2014 & 10,3 \% (68) & 89,7 \% (591)\\
+      Something 2 2014 & 19,6 \% (197) & 80,4 \% (809)\\
+      Something 1 2013 & 9,9 \% (54) & 90,1 \% (489)\\
+      Something 2 2013 & 18,9 \% (186) & 81,1 \% (782)\\
+   \hline\hline
+   \end{tabularx}
+\end{table}
+
+\end{frame}
+
+\begin{frame}[fragile]{What if I want source code?}
+    \begin{listing}[H]
+        \begin{minted}[mathescape, % allows math symbols
+                linenos, % number of lines
+                bgcolor=darkgray, % Background color
+            ]{haskell}
+            -- Equations work as well: $\tau = \sum_{k \in s}$
+            map :: (a -> b) -> [a] -> [b]
+            map f (x:xs) = f x : map f xs
+        \end{minted}
+        \caption{Some Haskell source code}
+        \label{lst:haskell}
+    \end{listing}
+\end{frame}
+
+\section{References}
+\bibliography{literature}
+\bibliographystyle{IEEEtran}
+
+\end{document}
