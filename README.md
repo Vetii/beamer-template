@@ -17,4 +17,4 @@ To set up the bibliography: `bibtex template`
 * `pygmentize -L styles` gives the list of styles availables for `minted`
 * `pygmentize -L lexers` gives the list of languages availables for `minted`
 * Minted documentation is [here](https://github.com/gpoore/minted/blob/master/source/minted.pdf)
-
+* Update font cache in case fonts are not found: `luaotfload-tool --update`
