@@ -6,7 +6,7 @@ Required packages: `minted`, `fontspec`, `graphicx`, `tabularx`.
 
 Required programs: `pygments` and  `pygmentize` (for `minted`), `lualatex` (for UTF8 support and nice fonts).
 
-Fonts: Roboto Slab and Lucida Grande
+Fonts: Roboto Slab and Tex Gyre Heros
 
 ## Build
 For the PDF: `lualatex -shell-escape template.tex`
