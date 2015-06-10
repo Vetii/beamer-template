@@ -18,3 +18,4 @@ To set up the bibliography: `bibtex template`
 * `pygmentize -L lexers` gives the list of languages availables for `minted`
 * Minted documentation is [here](https://github.com/gpoore/minted/blob/master/source/minted.pdf)
 * Update font cache in case fonts are not found: `luaotfload-tool --update`
+* Beamer user guide: [here](http://ftp.math.purdue.edu/mirrors/ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf)
